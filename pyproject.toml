@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "py_sysml_rdf"
+version = "0.0.1"
+description = "KA Python library providing RDF ontology definitions for SysML."
+authors = ["Dirk Friedenberger <projekte@frittenburger.de>"]
+license = "MIT"
+readme = "README.md"
+homepage = "https://github.com/dfriedenberger/sysml-rdf-model"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+rdflib = "^6.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
