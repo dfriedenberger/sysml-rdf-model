@@ -2,6 +2,13 @@
 
 A Python library providing RDF ontology definitions for SysML (Systems Modeling Language). This library contains a generated TTL (Turtle) file with SysML ontology definitions and provides a convenient Python interface to access the ontology classes and properties.
 
+## Ontology Visualization
+
+Visualized the ontology with [WebVOWL](https://service.tib.eu/webvowl/)
+
+![SysML Ontology](./sysml-0.0.1.ttl.svg)
+
+
 ## Installation
 
 ```bash
@@ -49,24 +56,6 @@ poetry build
 ```bash
 poetry publish --username __token__ --password <TOKEN>
 ```
-
-## Ontology Visualization
-
-Visualize the ontology with [WebVOWL](https://service.tib.eu/webvowl/)
-
-![SysML Ontology](./sysml-0.0.1.ttl.svg)
-
-## Publishing to PyPI
-
-1. **Test PyPI** (recommended first):
-   ```bash
-   python -m twine upload --repository testpypi dist/*
-   ```
-
-2. **Production PyPI**:
-   ```bash
-   python -m twine upload dist/*
-   ```
 
 ## Contributing
 

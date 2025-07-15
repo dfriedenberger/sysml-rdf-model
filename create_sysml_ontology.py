@@ -1,5 +1,4 @@
 from rdflib import Graph, Namespace, RDF, RDFS, OWL, URIRef, DCTERMS, Literal, XSD
-from importlib.metadata import version
 import tomllib
 
 with open("pyproject.toml", "rb") as f:
