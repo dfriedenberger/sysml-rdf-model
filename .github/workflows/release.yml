@@ -30,9 +30,7 @@ jobs:
           ruff check .
 
       - name: Run tests
-        run: |
-          pip install pytest
-          python -m pytest tests/
+        run: poetry run pytest tests/
 
   deploy:
     needs: build-test-lint
