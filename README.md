@@ -6,7 +6,7 @@ A Python library providing RDF ontology definitions for SysML (Systems Modeling 
 
 Visualized the ontology with [WebVOWL](https://service.tib.eu/webvowl/)
 
-![SysML Ontology](./sysml-0.0.1.ttl.svg)
+![SysML Ontology](./sysml-0.0.2.ttl.svg)
 
 
 ## Installation
