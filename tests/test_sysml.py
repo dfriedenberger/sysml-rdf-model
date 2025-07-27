@@ -14,6 +14,7 @@ def test_classes_exist():
     assert isinstance(SYSML.UseCase, URIRef)
     assert isinstance(SYSML.Subject, URIRef)
     assert isinstance(SYSML.Requirement, URIRef)
+    assert isinstance(SYSML.Block, URIRef)
 
 
 def test_object_properties_exist():

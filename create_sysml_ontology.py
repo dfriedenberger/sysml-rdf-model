@@ -38,6 +38,10 @@ g.add((NS.Subject, RDF.type, OWL.Class))
 g.add((NS.Subject, RDFS.label, Literal("An use case subject.", lang='en')))
 
 
+# Block Definition
+g.add((NS.Block, RDF.type, OWL.Class))
+g.add((NS.Block, RDFS.label, Literal("A system component.", lang='en')))
+
 # Requirements
 g.add((NS.Requirement, RDF.type, OWL.Class))
 g.add((NS.Requirement, RDFS.label, Literal("A requirement.", lang='en')))
@@ -53,9 +57,22 @@ g.add((NS.requirementText, RDFS.range, XSD.string))
 
 # relations
 g.add((NS.association, RDF.type, OWL.ObjectProperty))
-g.add((NS.association, RDFS.domain, NS.UseCase))
-g.add((NS.association, RDFS.range, NS.Actor))
-g.add((NS.association, RDFS.label, Literal("Association", lang='en')))
+g.add((NS.association, RDFS.domain, NS.Block))
+g.add((NS.association, RDFS.range, NS.Block))
+g.add((NS.association, RDFS.label, Literal("Association between blocks", lang='en')))
+
+g.add((NS.composition, RDF.type, OWL.ObjectProperty))
+g.add((NS.composition, RDFS.domain, NS.Block))
+g.add((NS.composition, RDFS.range, NS.Block))
+g.add((NS.composition, RDFS.label, Literal("Composition between blocks", lang='en')))
+g.add((NS.composition, RDFS.subPropertyOf, NS.association))
+
+
+g.add((NS.shared, RDF.type, OWL.ObjectProperty))
+g.add((NS.shared, RDFS.domain, NS.Block))
+g.add((NS.shared, RDFS.range, NS.Block))
+g.add((NS.shared, RDFS.label, Literal("Shared between blocks", lang='en')))
+g.add((NS.shared, RDFS.subPropertyOf, NS.association))
 
 g.add((NS.hasSubject, RDF.type, OWL.ObjectProperty))
 g.add((NS.hasSubject, RDFS.domain, NS.UseCase))
@@ -66,6 +83,9 @@ g.add((NS.nestedRequirement, RDF.type, OWL.ObjectProperty))
 g.add((NS.nestedRequirement, RDFS.domain, NS.Requirement))
 g.add((NS.nestedRequirement, RDFS.range, NS.Requirement))
 g.add((NS.nestedRequirement, RDFS.label, Literal("nestedRequirement", lang='en')))
+
+
+
 
 
 # Serialisierung der Ontologie in RDF/XML-Syntax

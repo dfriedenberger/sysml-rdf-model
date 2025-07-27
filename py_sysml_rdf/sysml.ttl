@@ -4,10 +4,14 @@
 @prefix sysml: <http://frittenburger.de/ontology/sysml#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-sysml:association a owl:ObjectProperty ;
-    rdfs:label "Association"@en ;
-    rdfs:domain sysml:UseCase ;
-    rdfs:range sysml:Actor .
+sysml:Actor a owl:Class ;
+    rdfs:label "An use case actor."@en .
+
+sysml:composition a owl:ObjectProperty ;
+    rdfs:label "Composition between blocks"@en ;
+    rdfs:domain sysml:Block ;
+    rdfs:range sysml:Block ;
+    rdfs:subPropertyOf sysml:association .
 
 sysml:hasSubject a owl:ObjectProperty ;
     rdfs:label "hasSubject"@en ;
@@ -27,16 +31,19 @@ sysml:requirementText a owl:DatatypeProperty ;
     rdfs:domain sysml:Requirement ;
     rdfs:range xsd:string .
 
+sysml:shared a owl:ObjectProperty ;
+    rdfs:label "Shared between blocks"@en ;
+    rdfs:domain sysml:Block ;
+    rdfs:range sysml:Block ;
+    rdfs:subPropertyOf sysml:association .
+
 <https://gitlab.hpi.de/dfriedenberger/sysml> a owl:Ontology ;
     dcterms:creator <https://www.researchgate.net/profile/Dirk_Friedenberger>,
         "Dirk Friedenberger" ;
     dcterms:description "A rdf Ontology for SysML model."@en ;
     dcterms:identifier "http://frittenburger.de/ontology/sysml#" ;
     dcterms:title "SysML Ontology" ;
-    owl:versionInfo "0.1.0" .
-
-sysml:Actor a owl:Class ;
-    rdfs:label "An use case actor."@en .
+    owl:versionInfo "0.0.1" .
 
 sysml:Subject a owl:Class ;
     rdfs:label "An use case subject."@en .
@@ -44,6 +51,14 @@ sysml:Subject a owl:Class ;
 sysml:UseCase a owl:Class ;
     rdfs:label "An use case."@en .
 
+sysml:association a owl:ObjectProperty ;
+    rdfs:label "Association between blocks"@en ;
+    rdfs:domain sysml:Block ;
+    rdfs:range sysml:Block .
+
 sysml:Requirement a owl:Class ;
     rdfs:label "A requirement."@en .
+
+sysml:Block a owl:Class ;
+    rdfs:label "A system component."@en .
 

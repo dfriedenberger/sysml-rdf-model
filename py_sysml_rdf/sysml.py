@@ -19,8 +19,12 @@ class SYSML(DefinedNamespace):
     UseCase: URIRef = ontology.get_class('#UseCase')
     Subject: URIRef = ontology.get_class('#Subject')
     Requirement: URIRef = ontology.get_class('#Requirement')
+    Block: URIRef = ontology.get_class('#Block')
 
     association: URIRef = ontology.get_object_property('#association')
+    composition: URIRef = ontology.get_object_property('#composition')
+    shared: URIRef = ontology.get_object_property('#shared')
+    
     hasSubject: URIRef = ontology.get_object_property('#hasSubject')
     nestedRequirement: URIRef = ontology.get_object_property('#nestedRequirement')
 
